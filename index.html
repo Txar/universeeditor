@@ -2,23 +2,32 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Web Space</title>
+        <title>Universe Editor</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body onload="load()">
         <div class="container">
 
-            <div class="material_manager" id="material_manager">
-                
+            <div class="material_manager_window">
+
+                <div class="material_manager_top">
+                    <form>Material manager
+
+                        <button type="button" onclick="addMaterial()">+</button>
+
+                    </form>
+                </div>
+
+
+                <div class="material_manager" id="material_manager"></div>
             </div>
 
-            <div class="planet_manager">
+            <div class="planet_picker"></div>
 
-            </div>
         </div>
         <br>
         <div class="console" id="consoleDiv">
-
+            o kurczę ale tekst
         </div>
         <script src="main.js"></script>
     </body>

@@ -1,5 +1,10 @@
 body{
     background-color: black;
+    font-family: sans-serif;
+}
+
+div{
+    font-family: ubuntuFont;
 }
 
 .container{
@@ -10,26 +15,38 @@ body{
 }
 
 .material_manager{
-    background-color: #767B91;
-    border-inline-color: #F7F9F7;
-    border-inline-style: solid;
-    border-inline-width: 3px;
-    width: 20%;
-    height: 100%;
-    float: left;
-    padding-inline: 0.5%;
+    background-color: #565B71;
+    width: 90%;
+    height: 90%;
     overflow-y: scroll;
     text-align: center;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.material_manager_top{
+    background-color: #767B91;
+    width: 100%;
+    height: 9%;
+}
+
+.material_manager_window{
+    background-color: #767B91;
+    width: 25%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    font-size: 120%;
 }
 
 .material_config{
     background-color: #1E212B;
-    border-bottom: #F7F9F7;
-    border-top: #F7F9F7;
     height: 6%;
-    border-radius: 0.3vw;
     margin-top: 2px;
     padding-top: 4px;
+    width: 95%;
+    margin-left: 2%;
 }
 
 .density_control_button{
@@ -37,11 +54,8 @@ body{
     width: 2vw;
 }
 
-.planet_manager{
+.planet_picker{
     background-color: #767B91;
-    border-inline-color: #F7F9F7;
-    border-inline-style: solid;
-    border-inline-width: 3px;
     width: 20%;
     height: 100%;
     float: right;
@@ -61,7 +75,17 @@ body{
 }
 
 .color_input{
-    width: 10vw;
+    width: 20%;
+}
+
+.color_preview{
+    width: 5%;
+    height: 5%;
+}
+
+.remove_button{
+    width: 5%;
+    height: 5%;
 }
 
 ::-webkit-scrollbar {
@@ -81,4 +105,9 @@ body{
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+@font-face {
+    font-family: ubuntuFont;
+    src: url("src/fonts/Ubuntu/Ubuntu-Regular.ttf");
 }
