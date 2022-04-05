@@ -1,0 +1,84 @@
+body{
+    background-color: black;
+}
+
+.container{
+    background-color: #1E212B;
+    color: #F7F9F7;
+    width: 100%;
+    height: 60vh;
+}
+
+.material_manager{
+    background-color: #767B91;
+    border-inline-color: #F7F9F7;
+    border-inline-style: solid;
+    border-inline-width: 3px;
+    width: 20%;
+    height: 100%;
+    float: left;
+    padding-inline: 0.5%;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.material_config{
+    background-color: #1E212B;
+    border-bottom: #F7F9F7;
+    border-top: #F7F9F7;
+    height: 6%;
+    border-radius: 0.3vw;
+    margin-top: 2px;
+    padding-top: 4px;
+}
+
+.density_control_button{
+    height: 2vw;
+    width: 2vw;
+}
+
+.planet_manager{
+    background-color: #767B91;
+    border-inline-color: #F7F9F7;
+    border-inline-style: solid;
+    border-inline-width: 3px;
+    width: 20%;
+    height: 100%;
+    float: right;
+    padding-inline: 0.5%;
+}
+
+.material{
+    color: white;
+}
+
+.console{
+    background-color: #1E212B;
+    color: #F7F9F7;
+    width: 100%;
+    height: 30vh;
+    padding-inline: 0.5%;
+}
+
+.color_input{
+    width: 10vw;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
