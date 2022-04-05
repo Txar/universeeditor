@@ -12,21 +12,25 @@ class material{
     getMaterialDiv(){
         let id = "materialColor" + this.id
 
-        let tempMaterialString = "<div class=\"material_config\"><form>" + this.name + "; Color: <input name=\"color\" type=\"text\" id=\""
-         + id + "\" class=\"color_input\" value=\"" + this.color + 
-         "\"> <button type=\"button\" onclick=\"removeMaterial(" + this.id + ")\">remove</button></form> </div>"
+        //let tempMaterialString = "<div onclick=\"print(\'test\')\" class=\"material_element\"><form>" + this.name + "; Color: <input name=\"color\" type=\"text\" id=\""
+        // + id + "\" class=\"color_input\" value=\"" + this.color + 
+        // "\"> <button type=\"button\" onclick=\"removeMaterial(" + this.id + ")\">remove</button></form> </div>"
+
+        let tempMaterialString = "<div onclick=\"print(\'test\')\" class=\"material_element\">"
+         + this.name + " <form class=\"float_right\"><button type=\"button\" onclick=\"removeMaterial("
+          + this.id + ")\">remove</button></form> <div class=\"color_preview\" style=\"background-color: #"
+         + this.color + "\";></div> </div>"
 
         return tempMaterialString
     }
 }
 
 function load(){
-    gray = new material(1.0, "FFFFFF", 0, "gray")
-    material_manager.innerHTML += gray.getMaterialDiv()
+    
 }
 
 function addMaterial(){
-    tempMaterial = new material(1.0, "FFFFFF", materials.length, "newMaterial")
+    tempMaterial = new material(1.0, "FFFFFF", materials.length, "newMaterial" + materials.length)
     materials.push(tempMaterial)
     updateMaterials()
 }

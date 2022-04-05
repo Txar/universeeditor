@@ -37,10 +37,9 @@ div{
     height: 100%;
     float: left;
     text-align: center;
-    font-size: 120%;
 }
 
-.material_config{
+.material_element{
     background-color: #1E212B;
     height: 6%;
     margin-top: 2px;
@@ -69,9 +68,10 @@ div{
 .console{
     background-color: #1E212B;
     color: #F7F9F7;
-    width: 100%;
+    width: 99%;
     height: 30vh;
     padding-inline: 0.5%;
+    overflow-y: scroll;
 }
 
 .color_input{
@@ -79,13 +79,19 @@ div{
 }
 
 .color_preview{
-    width: 5%;
-    height: 5%;
+    width: 10px;
+    height: 90%;
+    float: left;
 }
 
 .remove_button{
     width: 5%;
     height: 5%;
+}
+
+.float_right{
+    margin-right: 10px;
+    float: right;
 }
 
 ::-webkit-scrollbar {
