@@ -48,6 +48,18 @@ div{
     margin-left: 2%;
 }
 
+.selected_material_element{
+    background-color: #1E212B;
+    height: 6%;
+    margin-top: 2px;
+    padding-top: 4px;
+    width: 95%;
+    margin-left: 2%;
+    border-color: #F7F9F7;
+    border-width: 2px;
+    border-style: solid;
+}
+
 .density_control_button{
     height: 2vw;
     width: 2vw;
@@ -79,9 +91,10 @@ div{
 }
 
 .color_preview{
-    width: 10px;
+    width: 8%;
     height: 90%;
     float: left;
+    margin-left: 5%;
 }
 
 .remove_button{

@@ -1,5 +1,6 @@
 let material_manager = document.getElementById("material_manager")
 let materials = []
+let selectedMaterial
 
 class material{
     constructor(density, color, id, name){
@@ -15,11 +16,22 @@ class material{
         //let tempMaterialString = "<div onclick=\"print(\'test\')\" class=\"material_element\"><form>" + this.name + "; Color: <input name=\"color\" type=\"text\" id=\""
         // + id + "\" class=\"color_input\" value=\"" + this.color + 
         // "\"> <button type=\"button\" onclick=\"removeMaterial(" + this.id + ")\">remove</button></form> </div>"
+        
+        let tempMaterialString
 
-        let tempMaterialString = "<div onclick=\"print(\'test\')\" class=\"material_element\">"
-         + this.name + " <form class=\"float_right\"><button type=\"button\" onclick=\"removeMaterial("
-          + this.id + ")\">remove</button></form> <div class=\"color_preview\" style=\"background-color: #"
-         + this.color + "\";></div> </div>"
+        if (this.id == selectedMaterial){
+            tempMaterialString = "<div onclick=\"selectMaterial("
+            + this.id + ")\" class=\"selected_material_element\">"
+            + this.name + " <form class=\"float_right\"><button type=\"button\" onclick=\"removeMaterial("
+            + this.id + ")\">remove</button></form> <div class=\"color_preview\" style=\"background-color: #"
+            + this.color + ";\"></div> </div>"
+        }
+        else {
+            tempMaterialString = "<div onclick=\"selectMaterial(" + this.id + ")\" class=\"material_element\">"
+            + this.name + " <form class=\"float_right\"><button type=\"button\" onclick=\"removeMaterial("
+            + this.id + ")\">remove</button></form> <div class=\"color_preview\" style=\"background-color: #"
+            + this.color + ";\"></div> </div>"
+        }
 
         return tempMaterialString
     }
@@ -32,6 +44,12 @@ function load(){
 function addMaterial(){
     tempMaterial = new material(1.0, "FFFFFF", materials.length, "newMaterial" + materials.length)
     materials.push(tempMaterial)
+    updateMaterials()
+}
+
+function selectMaterial(id){
+    selectedMaterial = id
+    print(id)
     updateMaterials()
 }
 
