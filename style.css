@@ -48,6 +48,26 @@ div{
     margin-left: 2%;
 }
 
+.material_editor{
+    background-color: #767B91;
+    width: 25%;
+    height: 100%;
+    float: left;
+    color: white;
+}
+
+.editor_form{
+    margin: 3%;
+    float: right;
+    text-align: right;
+}
+
+.editor_input_names{
+    margin: 3%;
+    float: left;
+    text-align: left;
+}
+
 .selected_material_element{
     background-color: #1E212B;
     height: 6%;
@@ -65,6 +85,11 @@ div{
     width: 2vw;
 }
 
+.bottom_container{
+    height: 30vh;
+    width: 100%;
+}
+
 .planet_picker{
     background-color: #767B91;
     width: 20%;
@@ -80,10 +105,10 @@ div{
 .console{
     background-color: #1E212B;
     color: #F7F9F7;
-    width: 99%;
+    width: 75%;
     height: 30vh;
-    padding-inline: 0.5%;
     overflow-y: scroll;
+    float: right;
 }
 
 .color_input{
@@ -91,8 +116,8 @@ div{
 }
 
 .color_preview{
-    width: 8%;
-    height: 90%;
+    width: 1.5vw;
+    height: 1.5vw;
     float: left;
     margin-left: 5%;
 }

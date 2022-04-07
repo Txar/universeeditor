@@ -1,4 +1,5 @@
 let material_manager = document.getElementById("material_manager")
+let material_editor = document.getElementById("material_editor")
 let materials = []
 let selectedMaterial
 
@@ -11,7 +12,7 @@ class material{
     }
 
     getMaterialDiv(){
-        let id = "materialColor" + this.id
+        //let id = "materialColor" + this.id
 
         //let tempMaterialString = "<div onclick=\"print(\'test\')\" class=\"material_element\"><form>" + this.name + "; Color: <input name=\"color\" type=\"text\" id=\""
         // + id + "\" class=\"color_input\" value=\"" + this.color + 
@@ -35,6 +36,26 @@ class material{
 
         return tempMaterialString
     }
+
+    getMaterialEditorDiv(){
+        let tempMaterialString
+
+        tempMaterialString = "<div class=\"editor_input_names\"> name: <br> density: <br> color: </div>"
+        
+        + "<form class=\"editor_form\"> <input type=\"text\" name=\"name\" id=\"name_input\" onchange=\"updateName(" 
+        
+        + this.id + ")\" value=\"" + this.name + "\"> <br> <input type=\"number\" id=\"density_input\" name=\"density\" value=\"" 
+        
+        + this.density + "\" onchange=\"updateDensity(" 
+        
+        + this.id + ")\"> <br> <input type=\"text\" id=\"color_input\" name=\"color\" value=\""
+        
+        + this.color + "\" onchange=\"updateColor(" + this.id 
+        
+        + ")\"> </form>"
+
+        return tempMaterialString
+    }
 }
 
 function load(){
@@ -47,10 +68,29 @@ function addMaterial(){
     updateMaterials()
 }
 
+function updateDensity(id){
+    materials[id].density = document.getElementById("density_input").value
+    updateMaterials()
+}
+
+function updateName(id){
+    materials[id].name = document.getElementById("name_input").value
+    updateMaterials()
+}
+
+function updateColor(id){
+    materials[id].color = document.getElementById("color_input").value
+    updateMaterials()
+}
+
 function selectMaterial(id){
     selectedMaterial = id
     print(id)
     updateMaterials()
+}
+
+function updateMaterialEditor(){
+    material_editor.innerHTML = materials[selectedMaterial].getMaterialEditorDiv()
 }
 
 function updateMaterials(){
@@ -59,6 +99,7 @@ function updateMaterials(){
         materials[i].id = i;
         material_manager.innerHTML += materials[i].getMaterialDiv()
     }
+    updateMaterialEditor()
 }
 
 function removeMaterial(id){
