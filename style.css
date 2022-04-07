@@ -86,7 +86,7 @@ div{
 }
 
 .bottom_container{
-    height: 30vh;
+    height: 25vh;
     width: 100%;
 }
 
@@ -106,7 +106,7 @@ div{
     background-color: #1E212B;
     color: #F7F9F7;
     width: 75%;
-    height: 30vh;
+    height: 100%;
     overflow-y: scroll;
     float: right;
 }
