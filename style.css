@@ -59,7 +59,7 @@ div{
 .editor_form{
     margin: 3%;
     float: right;
-    text-align: right;
+    text-align: center;
 }
 
 .editor_input_names{
@@ -90,25 +90,67 @@ div{
     width: 100%;
 }
 
-.planet_picker{
-    background-color: #767B91;
-    width: 20%;
-    height: 100%;
-    float: right;
-    padding-inline: 0.5%;
+.planet_element{
+    background-color: #1E212B;
+    height: 6%;
+    margin-top: 2px;
+    padding-top: 4px;
+    width: 95%;
+    margin-left: 2%;
 }
 
-.material{
+.planet_manager_window{
+    background-color: #767B91;
+    width: 25%;
+    height: 100%;
+    float: right;
+    text-align: center;
+}
+
+.selected_planet_element{
+    background-color: #1E212B;
+    height: 6%;
+    margin-top: 2px;
+    padding-top: 4px;
+    width: 95%;
+    margin-left: 2%;
+    border-color: #F7F9F7;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.planet_manager{
+    background-color: #565B71;
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.planet_manager_top{
+    background-color: #767B91;
+    width: 100%;
+    height: 9%;
+}
+
+.planet_editor{
+    background-color: #767B91;
+    width: 25%;
+    height: 100%;
+    float: right;
     color: white;
 }
 
 .console{
     background-color: #1E212B;
     color: #F7F9F7;
-    width: 75%;
+    width: 50%;
     height: 100%;
     overflow-y: scroll;
-    float: right;
+    float: left;
 }
 
 .color_input{
@@ -122,6 +164,10 @@ div{
     margin-left: 5%;
 }
 
+#round{
+    border-radius: 50%;
+}
+
 .remove_button{
     width: 5%;
     height: 5%;
@@ -130,6 +176,15 @@ div{
 .float_right{
     margin-right: 10px;
     float: right;
+}
+
+.unselectable, button{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 ::-webkit-scrollbar {
