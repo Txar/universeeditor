@@ -3,10 +3,20 @@ let material_editor = document.getElementById("material_editor")
 let materials = []
 let selectedMaterial = 0
 
+let screen = document.getElementById("screen")
+var ctx
+
 let planet_manager = document.getElementById("planet_manager")
 let planet_editor = document.getElementById("planet_editor")
 let planets = []
 let selectedPlanet = 0
+
+let world_manager = document.getElementById("world_manager")
+let cameraCenteredOn = 0 //planet id
+
+window.addEventListener('resize', function(event){
+    setCanvasSize()
+});
 
 class Material{
     constructor(density, color, id, name){
@@ -129,8 +139,33 @@ class Planet{
     }
 }
 
+function drawCircle(x, y, color, size){
+    ctx.fillStyle = color
+    ctx.beginPath()
+    ctx.ellipse(x, y, size, size, 0, 0, Math.PI * 2)
+    ctx.fill()
+}
+
+function setCanvasSize(){
+    let width = screen.clientWidth
+    let height = screen.clientHeight
+
+    if (screen.width !== width || screen.height !== height) {
+        screen.width = width
+        screen.height = height
+    }
+}
+
 function load(){
-    
+    setCanvasSize()
+
+    ctx = screen.getContext("2d")
+
+    ctx.clearRect(0, 0, screen.width, screen.height);
+
+    drawCircle(70, 70, "#FFAFAF", 50)
+
+    updateWorldManager()
 }
 
 function addMaterial(){
@@ -163,7 +198,6 @@ function updatePlanetName(id){
 
 function updateMaterialSelection(id){
     planets[id].material_id = document.getElementById("material_select").value
-    print(document.getElementById("material_select").value)
     updatePlanets()
 }
 
@@ -220,6 +254,10 @@ function updatePlanets(){
     }
 }
 
+function updateWorldManager(){
+    world_manager.innerHTML = getWorldManagerDiv()
+}
+
 function removeMaterial(id){
     materials.splice(id, 1)
     updateMaterials()
@@ -230,7 +268,10 @@ function removePlanet(id){
     updatePlanets()
 }
 
-function print(a){
-    document.getElementById("consoleDiv").innerText += a
-    document.getElementById("consoleDiv").innerHTML += "<br>"
+function getWorldManagerDiv(){
+    let tempString = ""
+
+    tempString += "<div class=\"editor_input_names\"> camera centered on: </div>"
+
+    return tempString
 }

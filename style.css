@@ -14,6 +14,21 @@ div{
     height: 60vh;
 }
 
+.screen_div{
+    background-color: #1E212B;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+.screen{
+    width: 95%;
+    height: 95%;
+    margin-top: 1%;
+    background-color: black;
+}
+
 .material_manager{
     background-color: #565B71;
     width: 90%;
@@ -144,13 +159,23 @@ div{
     color: white;
 }
 
-.console{
+.world_manager_window{
     background-color: #1E212B;
     color: #F7F9F7;
     width: 50%;
     height: 100%;
     overflow-y: scroll;
     float: left;
+    text-align: center;
+}
+
+.world_manager{
+    background-color: #565B71;
+    width: 95%;
+    height: 95%;
+    margin-top: 0.5%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .color_input{
