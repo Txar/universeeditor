@@ -75,12 +75,14 @@ div{
     margin: 3%;
     float: right;
     text-align: center;
+    line-height: 2.5vh;
 }
 
 .editor_input_names{
     margin: 3%;
     float: left;
     text-align: left;
+    line-height: 2.5vh;
 }
 
 .selected_material_element{
@@ -164,7 +166,6 @@ div{
     color: #F7F9F7;
     width: 50%;
     height: 100%;
-    overflow-y: scroll;
     float: left;
     text-align: center;
 }
