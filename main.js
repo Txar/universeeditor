@@ -45,6 +45,14 @@ function distance(x0, x1){
     return d
 }
 
+function pointDistance(point_a, point_b){
+	let x_distance = distance(point_a.x, point_b.x)
+	let y_distance = distance(point_a.y, point_b.y)
+	let d = Math.sqrt((x_distance * x_distance) + (y_distance * y_distance))
+	
+	return d
+}
+
 window.addEventListener('resize', function(event){
     setCanvasSize()
 });
@@ -177,48 +185,51 @@ class Planet{
 
         this.x = Number(this.x) + Number(this.velocity.x)
         this.y = Number(this.y) + Number(this.velocity.y)
-    }
+    }d
 
     accelerateTowards(point, force){
 
-        let tf = Number(force)
-        force = Number(force)
-  
-        console.log(force)
+		let d = pointDistance(this, point)
 
-        if (distance(this.x, point.x) != 0){
+        force = Number(force)
+        let tf = Number(force / 2 / d)
+        
+        d = d * d
+
+        if (d != 0){
             if (this.x > point.x){
 
-                this.velocity.x = Number(this.velocity.x) - (force / 2 / (distance(point.x, this.x) * distance(point.x, this.x)))
+                this.velocity.x = Number(this.velocity.x) - (force / 2 / d)
 
-                tf = tf - (force / 2 / (distance(point.x, this.x) * distance(point.x, this.x)))
+                tf = tf - (force / 2 / d)
             }
 
             else if (this.x < point.x){
 
-                this.velocity.x = Number(this.velocity.x) + (force / 2 / (distance(point.x, this.x)))
+                this.velocity.x = Number(this.velocity.x) + (force / 2 / d)
 
-                tf = tf - (force / 2 / (distance(point.x, this.x) * distance(point.x, this.x)))
+                tf = tf - (force / 2 / d)
             }
         } 
 
-        if (distance(this.y, point.y) != 0){ 
+        if (d != 0){ 
             if (this.y > point.y){
 
-                this.velocity.y = Number(this.velocity.y) - (force / 2 / (distance(point.y, this.y) * distance(point.y, this.y)))
+                this.velocity.y = Number(this.velocity.y) - (force / 2 / d)
 
-                tf = tf - (force / 2 / (distance(point.y, this.y) * distance(point.y, this.y)))
+                tf = tf - (force / 2 / d)
             }
 
             else if (this.y < point.y){
 
-                this.velocity.y = Number(this.velocity.y) + (force / 2 / (distance(point.y, this.y) * distance(point.y, this.y)))
+                this.velocity.y = Number(this.velocity.y) + (force / 2 / d)
 
-                tf = tf - (force / 2 / (distance(point.y, this.y) * distance(point.y, this.y)))
+                tf = tf - (force / 2 / d)
             }
         }       
 
-        /*if (tf > 0){
+        if (tf > 0){
+			console.log("a")
             if (Math.abs(distance(point.y, this.y)) > Math.abs(distance(point.x, this.x))){
 
                 if (this.y + this.velocity.y > point.y){
@@ -237,9 +248,8 @@ class Planet{
                 else {
                     this.velocity.x = this.velocity.x + tf
                 }
-
             }
-        }*/
+        }
     }
 
     reset(){
