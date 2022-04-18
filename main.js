@@ -147,11 +147,11 @@ class Planet{
         let F
         for (let i = 0; i < planets.length; i++){
             F = 0
-            if (i == this.id){
+            if (i == this.id || pointDistance(this, planets[i]){
                 continue
             }
 
-            F = (G * Number(this.mass) * Number(planets[i].mass))
+            F = (G * Number(planets[i].mass))
             this.accelerateTowards(new Vector(planets[i].x,  planets[i].y), F)
         }
 
