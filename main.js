@@ -147,7 +147,7 @@ class Planet{
         let F
         for (let i = 0; i < planets.length; i++){
             F = 0
-            if (i == this.id || pointDistance(this, planets[i])){
+            if (i == this.id || pointDistance(this, planets[i]) == 0){
                 continue
             }
 
