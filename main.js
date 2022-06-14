@@ -229,7 +229,6 @@ class Planet{
         }       
 
         if (tf > 0){
-			console.log("a")
             if (Math.abs(distance(point.y, this.y)) > Math.abs(distance(point.x, this.x))){
 
                 if (this.y + this.velocity.y > point.y){
@@ -341,6 +340,17 @@ function load(){
     ctx = screen.getContext("2d")
 
     ctx.clearRect(0, 0, screen.width, screen.height);
+
+
+    materials.push(new Material(30000000.0, "11AAFF", materials.length, "newMaterial" + materials.length))
+    materials.push(new Material(30000000.0, "EE22CC", materials.length, "newMaterial" + materials.length))
+    materials.push(new Material(30000000.0, "AAFF33", materials.length, "newMaterial" + materials.length))
+    updateMaterials()
+
+    planets.push(new Planet("newPlanet" + planets.length, 1, 30.0, 0, 0, new Vector(0, 0), planets.length))
+    planets.push(new Planet("newPlanet" + planets.length, 0, 12.0, 180, 0, new Vector(0, 5), planets.length))
+    planets.push(new Planet("newPlanet" + planets.length, 2, 25.0, -100, 0, new Vector(0, 3), planets.length))
+    updatePlanets()
 
     updateWorldManager()
 
